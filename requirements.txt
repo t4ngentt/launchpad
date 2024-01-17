@@ -1,4 +1,5 @@
 flask
 langchain
-flask requests
+flask
+requests
 python-dotenv
