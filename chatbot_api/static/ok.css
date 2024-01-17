@@ -6,7 +6,7 @@
 	 font-family: 'Rubik', sans-serif;
 	 background: linear-gradient(217deg, #987cf0, #91b3e1, #e191d7);
      background-size: 600% 600%;
-
+	 mix-blend-mode: multiply;
      -webkit-animation: AnimationName 9s ease infinite;
      -moz-animation: AnimationName 9s ease infinite;
      animation: AnimationName 9s ease infinite;
@@ -51,6 +51,8 @@
 	 background-size: cover;
 	 background-repeat: no-repeat;
 	 background-position: center;
+	 mix-blend-mode: multiply;
+
 }
  .header > h2 {
 	 margin: 0;
