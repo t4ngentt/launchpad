@@ -1,0 +1,25 @@
+<html>
+    <head>  <link rel="stylesheet" href="{{ url_for('static', filename='ok.css')}}">   
+    <title>test</title>
+  </head>
+    <body>
+        <div class="container">
+        <div class="left">
+          <div class="header">
+            <h2 class="animation a1">Hey!</h2>
+            <h4 class="animation a2">Simulate conversations with different personas. A developer? HR? business coach? Anything.</h4>
+          </div>
+          <div class="form">
+            <form name="form", method="post", action="chat">
+            <input name="position" class="form-field animation a3" placeholder="Position">
+            <input name="query" class="form-field animation a4" placeholder="Query">
+            <input type="submit" value="Submit" class="animation a6">
+          </form>
+          </div>
+          <h4>{{messages}}</h4>
+        </div>
+        <div class="right"></div>
+      </div>
+        
+    </body>
+</html>
