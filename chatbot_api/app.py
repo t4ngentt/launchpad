@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from static.temp import initaite_query
+from static.func import initaite_query
 
 app = Flask(__name__)
 
