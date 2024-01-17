@@ -7,7 +7,7 @@ from langchain_openai import OpenAI
 import yaml
 
 print(os.getcwd())
-with open('./static/config.yaml', 'r') as file:
+with open('./config.yaml', 'r') as file:
     keydic = yaml.safe_load(file)
 
 OPENAI_API_KEY = getpass()
