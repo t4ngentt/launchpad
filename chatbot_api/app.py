@@ -20,8 +20,8 @@ def home():
     print(position, query)
     resp = initaite_query(position, query)
 
-    file1 = open("./static/history.txt", "r") 
+    file1 = open("./static/txt/"+position+".txt", "r") 
     history = file1.read()
-
+    file1.close()
     return render_template('index2.html', messages =resp, pos = position, history = history)
 
