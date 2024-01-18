@@ -4,7 +4,7 @@ from langchain.chains import LLMChain, SimpleSequentialChain
 from langchain.prompts import PromptTemplate
 from langchain_openai import OpenAI
 from langchain.memory import ConversationBufferMemory
-
+import json
 
 import yaml
 
@@ -23,7 +23,7 @@ def initaite_query(position, human_input):
     
     main_prompt = PromptTemplate(
     input_variables=['position', 'human_input', 'chat_history'],
-    template="""You are a as a seasoned {position}. You are chatting with a user.
+    template="""You are a seasoned {position}. You are chatting with a user.
     
     Chat History:   
 
@@ -35,6 +35,8 @@ def initaite_query(position, human_input):
 
     chain = LLMChain(llm=sllm,prompt = main_prompt, verbose=True, memory=memory)
     temp = chain.predict(position=position, human_input=human_input)
-    print(temp)
-    print("-------------------------------------- ")
-    return (temp)
+    print(temp)    
+
+    file1 = open("./static/history.txt", "a") 
+    file1.write('You: ' + human_input + "\nAI: " + temp + "\n----------------------------- \n")
+    return temp

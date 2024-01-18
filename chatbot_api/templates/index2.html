@@ -6,10 +6,12 @@
         <div class="container">
         <div class="left">
           <div class="header">
-            <h2>Respose</h2>
-            <h4>{{messages}}</h4>
+            <!-- <h2>Respose</h2> -->
+            <!-- <h4>{{messages}}</h4> -->
           </div>
+
           <div class="form">
+            <textarea value={{history}} rows=20 name="historywindow" style="max-height:400px; overflow:scroll;" readonly>{{history}}</textarea> 
             <form name="form", method="post", action="chat">
             <input name="position" class="form-field animation a3" value={{pos}}>
             <input name="query" class="form-field animation a4" placeholder="Query">

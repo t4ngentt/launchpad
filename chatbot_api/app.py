@@ -17,9 +17,11 @@ def home():
 
     position = request.form.get('position')
     query = request.form.get('query')
-
     print(position, query)
     resp = initaite_query(position, query)
 
-    return render_template('index2.html', messages =resp, pos = position)
+    file1 = open("./static/history.txt", "r") 
+    history = file1.read()
+
+    return render_template('index2.html', messages =resp, pos = position, history = history)
 
