@@ -1,6 +1,18 @@
 <html>
     <head>  <link rel="stylesheet" href="{{ url_for('static', filename='ok2.css')}}">   
     <title>Chat Window</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #scrollableContainer {
+            width: 600px;
+            height: 400px;
+            overflow: auto;
+            border: 1px solid #ccc;
+            padding: 25px;
+            border-radius: 15px;
+        }
+    </style>
   </head>
     <body>
         <div class="container">
@@ -11,7 +23,10 @@
           </div>
 
           <div class="form">
-            <textarea value={{history}} rows=20 name="historywindow" style="max-height:400px; overflow:scroll;" readonly>{{history}}</textarea> 
+            <!-- <textarea value={{history}} rows=20 id="historywindow" style="max-height:400px; overflow:scroll;" readonly>{{history}}</textarea>  -->
+            <div id="scrollableContainer">
+              <h4 > {{history |replace('\n', '<br>')|safe }} </h4>
+            </div>  
             <form name="form", method="post", action="chat">
             <input name="position" class="form-field animation a3" value={{pos}}>
             <input name="query" class="form-field animation a4" placeholder="Query">
@@ -21,6 +36,19 @@
         </div>
         <div class="right"></div>
       </div>
+    
+      <script>
+        function formatTextarea() {
+            var textarea = document.getElementById('historywindow');
+            var content = textarea.value;
+
+            content = content.replace(/(You:|AI:)/g, '<b>$1</b>');
+
+            textarea.innerHTML = content;
+        }
+
+        window.onload = formatTextarea;
+    </script>
         
     </body>
 </html>
