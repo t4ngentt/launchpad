@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         #scrollableContainer {
-            width: 1000px;
+            width: 800px;
             height: 400px;
             overflow: auto;
             border: 1px solid #ccc;
@@ -18,15 +18,15 @@
         <div class="container">
         <div class="left">
           <div class="header">
+            <div id="scrollableContainer">
+              <h4 > {{history |replace('\n', '<br>')|safe }} </h4>
+            </div>
             <!-- <h2>Respose</h2> -->
             <!-- <h4>{{messages}}</h4> -->
           </div>
 
           <div class="form">
-            <!-- <textarea value={{history}} rows=20 id="historywindow" style="max-height:400px; overflow:scroll;" readonly>{{history}}</textarea>  -->
-            <div id="scrollableContainer">
-              <h4 > {{history |replace('\n', '<br>')|safe }} </h4>
-            </div>  
+            <!-- <textarea value={{history}} rows=20 id="historywindow" style="max-height:400px; overflow:scroll;" readonly>{{history}}</textarea>  -->  
             <form name="form", method="post", action="chat">
             <input name="position" class="form-field animation a3" value={{pos}}>
             <input name="query" class="form-field animation a4" placeholder="Query">

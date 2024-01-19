@@ -57,14 +57,7 @@
 	 margin: 0;
 	 color: #4f46a5;
 }
- .header > h4 {
-	 margin-top: 20px;
-	 font-weight: normal;
-	 font-size: 18px;
-	 color: rgba(0, 0, 0, .4);
-	 line-height: 1.2;
-	 padding-bottom: 200px;
-}
+
  .form {
 	 max-width: 80%;
 	 display: flex;
@@ -112,7 +105,7 @@
    font-family: 'Rubik', sans-serif;
 }
 
-.form > textarea {
+.h4 {
 	font-family: 'Rubik', sans-serif;
 	background: linear-gradient(217deg, #9a90ba, #c2d0e3, #e6c4e1);
 	-webkit-animation: AnimationName 9s ease infinite;
@@ -122,11 +115,7 @@
 	margin-top: 20px;
 	font-weight: normal;
 	font-size: 18px;
-	color: rgba(0, 0, 0, .5);
 	line-height: 1.2;
-	padding-bottom: 200px;
-	border-radius: 15px;
-
 }
 
 input[type=submit] {
